@@ -1,25 +1,25 @@
-project(':validating') {
-    jmh {
-        include = 'validating.jmh.*'
-    }
-}
+//project(':validating') {
+//    jmh {
+//        include = 'validating.jmh.*'
+//    }
+//}
 
 project(':equalshashcode') {
     dependencies {
-        compile project(':reflection')
-        compile project(':collections')
+        implementation project(':reflection')
+        implementation project(':collections')
     }
 }
 
 project(':lowlevel') {
     dependencies {
-        compile project(':enums')
+        implementation project(':enums')
     }
 }
 
 project(':strings') {
     dependencies {
-        compile project(':generics')
+        implementation project(':generics')
     }
 }
 
@@ -30,44 +30,44 @@ project(':serialization') {
         }
     }
     dependencies {
-        compile 'com.io7m.xom:xom:1.2.10'
+        implementation 'com.io7m.xom:xom:1.2.10'
     }
 }
 
 project(':interfaces') {
     dependencies {
-        compile project(':polymorphism')
+        implementation project(':polymorphism')
     }
 }
 
 project(':hiding') {
     dependencies {
-        compile project(':com')
+        implementation project(':com')
     }
 }
 
 project(':generics') {
     dependencies {
-        compile project(':reflection')
+        implementation project(':reflection')
     }
 }
 
 project(':collections') {
     dependencies {
-        compile project(':reflection')
+        implementation project(':reflection')
     }
 }
 
 project(':patterns') {
     dependencies {
-        compile project(':enums')
+        implementation project(':enums')
     }
 }
 
 configure(subprojects - project(':onjava')) {
     dependencies {
-        compile project(':onjava')
-        compile 'com.google.guava:guava:21.0'
-        compileOnly "org.openjdk.jmh:jmh-core:${jmh.jmhVersion}"
+        implementation project(':onjava')
+        implementation 'com.google.guava:guava:21.0'
+//        compileOnly "org.openjdk.jmh:jmh-core:${jmh.jmhVersion}"
     }
 }

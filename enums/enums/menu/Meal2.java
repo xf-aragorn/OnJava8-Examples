@@ -11,7 +11,7 @@ public enum Meal2 {
   MAINCOURSE(Food.MainCourse.class),
   DESSERT(Food.Dessert.class),
   COFFEE(Food.Coffee.class);
-  private Food[] values;
+  private final Food[] values;
   private Meal2(Class<? extends Food> kind) {
     values = kind.getEnumConstants();
   }

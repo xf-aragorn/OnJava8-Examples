@@ -26,7 +26,7 @@ public class ArrowInSwitch {
     }
   }
   public static void main(String[] args) {
-    range(0, 4).forEach(i -> colons(i));
+    range(0, 4).forEach(ArrowInSwitch::colons);
     range(0, 4).forEach(i -> arrows(i));
   }
 }

@@ -19,7 +19,7 @@ public class WorkStealingPool {
       Runtime.getRuntime().availableProcessors());
     ExecutorService exec =
       Executors.newWorkStealingPool();
-    IntStream.range(0, 10)
+    IntStream.range(0, 100).parallel()
       .mapToObj(n -> new ShowThread())
       .forEach(exec::execute);
     exec.awaitTermination(1, TimeUnit.SECONDS);
